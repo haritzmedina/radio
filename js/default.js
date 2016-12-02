@@ -70,6 +70,7 @@
 
     function extractMetadata(){
         var player = document.getElementById('audioPlayer');
+
         if(player.dataset.radioMeta!==''){
             $.get(player.dataset.radioMeta, function(result){
                 debugger;
