@@ -8,6 +8,13 @@
             var player = document.getElementById('audioPlayer');
             // Set new radio to the player
             player.innerHTML = "<source id='sourcePL' src='"+radioUri+"' type='audio/mpeg'/>";
+            // Set metadata retriever url
+            if(event.toElement.dataset.radioMeta){
+                player.dataset.radioMeta = event.toElement.dataset.radioMeta;
+            }
+            else{
+                player.dataset.radioMeta = '';
+            }
             // Reload and play
             player.load();
             playPlayer();
@@ -61,6 +68,16 @@
         }
     }
 
+    function extractMetadata(){
+        var player = document.getElementById('audioPlayer');
+        if(player.dataset.radioMeta!==''){
+            $.get(player.dataset.radioMeta, function(result){
+                debugger;
+            });
+            console.log(player.dataset.radioMeta);
+        }
+    }
+
 
     var listenButtons = document.getElementsByClassName("listenRadio");
     var i = 0;
@@ -69,5 +86,8 @@
     }
 
     setControlsListeners();
+
+    setInterval(extractMetadata, 3000);
+
 
 })();
