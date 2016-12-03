@@ -8,6 +8,14 @@
             var player = document.getElementById('audioPlayer');
             // Set new radio to the player
             player.innerHTML = "<source id='sourcePL' src='"+radioUri+"' type='audio/mpeg'/>";
+            // Set info new url
+            var infoLink = document.getElementById('info').firstChild;
+            if(typeof event.toElement.dataset.radioInfo === 'string'){
+                infoLink.href = event.toElement.dataset.radioInfo;
+            }
+            else{
+                infoLink.removeAttribute('href');
+            }
             // Reload and play
             player.load();
             playPlayer();

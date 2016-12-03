@@ -53,6 +53,7 @@ header{
 #player .controller{
     float: left;
     margin-left: 15px;
+    cursor: pointer;
 }
 
 #player img{
