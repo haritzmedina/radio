@@ -2,6 +2,12 @@ body{
     background-color: black;
 }
 
+header{
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
 #radios{
     align-content: space-around;
     min-height: 80%;
