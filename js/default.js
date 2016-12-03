@@ -8,14 +8,7 @@
             var player = document.getElementById('audioPlayer');
             // Set new radio to the player
             player.innerHTML = "<source id='sourcePL' src='"+radioUri+"' type='audio/mpeg'/>";
-            // Set info new url
-            var infoLink = document.getElementById('info').firstChild;
-            if(typeof event.toElement.dataset.radioInfo === 'string'){
-                infoLink.href = event.toElement.dataset.radioInfo;
-            }
-            else{
-                infoLink.removeAttribute('href');
-            }
+            player.dataset.station = event.toElement.innerText;
             // Reload and play
             player.load();
             playPlayer();
@@ -77,5 +70,21 @@
     }
 
     setControlsListeners();
+
+    function updateSongMetadata(){
+        var stationName = document.getElementById('audioPlayer').dataset.station;
+        if(typeof stationName==='string'){
+            console.log('Retrieving metadata from '+stationName);
+            $.getJSON('metadata.php?name='+stationName, function(result){
+                // Set song title
+                document.getElementById('songtitle').innerText = result.metadata.title;
+                // Update youtube link
+                document.getElementById('youtubeLink').href =
+                    'https://www.youtube.com/results?search_query='+result.metadata.title;
+            });
+        }
+    }
+
+    setInterval(updateSongMetadata, 3000);
 
 })();
