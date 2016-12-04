@@ -82,7 +82,7 @@
         var stationName = document.getElementById('audioPlayer').dataset.station;
         if(typeof stationName==='string'){
             $.getJSON('metadata.php?name='+stationName, function(result){
-                if(result.metadata.title){
+                if(typeof result.metadata.title === 'string'){
                     // Set song title
                     document.getElementById('songtitle').innerText = result.metadata.title;
                     // Update youtube link
