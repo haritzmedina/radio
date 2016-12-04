@@ -10,13 +10,14 @@ header{
 
 #radios{
     align-content: space-around;
-    min-height: 80%;
-    max-height: 80%;
+    min-height: 75%;
+    max-height: 75%;
     overflow: auto;
 }
 
 .listenRadio{
     color: #8a6da3;
+    font-weight: bold;
     cursor: pointer;
     width: 10%;
     min-width: 200px;
@@ -47,7 +48,10 @@ header{
     bottom: 10px;
     display: block;
     position: absolute;
-
+    min-height: 60px;
+    background: black;
+    padding-top: 10px;
+    padding-right: 10px;
 }
 
 #player .controller{
@@ -62,6 +66,7 @@ header{
 }
 
 #metadata{
+    margin-top: 15px;
     color: white;
-    width: 500px;
+    max-width: 500px;
 }

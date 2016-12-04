@@ -1,5 +1,5 @@
 A web based EDM radio station listener written in php, html, and javascript. Simple, fast, and light at:
-http://radio.haritzmedina.com
+https://radio.haritzmedina.com
 
 #Features
 * Radio station selection in one click.
@@ -13,6 +13,8 @@ http://radio.haritzmedina.com
 * [RadioParty.pl](http://radioparty.pl/) /Shoutcast/
 * [FlaixFM](http://www.flaixfm.cat/)
 * [PulseEDM](http://www.streamlicensing.com/stations/sadanceradio/pulseEDM.html) /Shoutcast/
+* [DanceAttackFM](http://www.danceattack.fm/) /Shoutcast/
+* [RadioSeven.se](http://www.radioseven.se/) /Shoutcast/
 
 #Contact
 If you want to add new radio stations or any other improvement, just [contact me](mailto:me@haritzmedina.com).

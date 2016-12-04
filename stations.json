@@ -28,5 +28,17 @@
     "metadata": "http://us3.internet-radio.com:8087/7.html",
     "name": "PulseEDM",
     "type": "shoutcast"
+  },
+  {
+    "media": "http://149.255.59.164:8012/;stream.mp3",
+    "metadata": "http://149.255.59.164:8012/7.html",
+    "name": "DanceAttackFM",
+    "type": "shoutcast"
+  },
+  {
+    "media": "http://188.65.154.167:8500/;",
+    "metadata": "http://188.65.154.167:8500/7.html",
+    "name": "RadioSeven",
+    "type": "shoutcast"
   }
 ]

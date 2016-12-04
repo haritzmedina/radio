@@ -16,6 +16,8 @@ foreach($stations as $station){
 $response = new stdClass();
 $response->station = $requestedStation;
 
+$response->metadata = new stdClass();
+
 if($requestedStation->type==='shoutcast'){
     // create curl resource
     $ch = curl_init();
@@ -57,8 +59,6 @@ if($requestedStation->type==='shoutcast'){
     $pos = strrpos($bodyContent, ',');
     $id = $pos === false ? $bodyContent : substr($bodyContent, $pos + 1);
 
-
-    $response->metadata = new stdClass();
     $response->metadata->title = $id;
 
     // close curl resource to free up system resources
@@ -67,5 +67,3 @@ if($requestedStation->type==='shoutcast'){
 
 // Response the user
 echo(json_encode($response));
-
-?>
