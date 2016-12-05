@@ -123,16 +123,19 @@
             var historySong = content.children[0];
 
             var d = new Date();
-            var timeStampString = ('0' + d.getHours()).slice(-2) + ":" + ('0' + d.getMinutes()).slice(-2) + ":" + ('0' + d.getSeconds()).slice(-2);
+            var timeStampString = ('0' + d.getHours()).slice(-2) + ":" + ('0' + d.getMinutes()).slice(-2);
 
             historySong.dataset.timestamp = d.getTime();
             historySong.dataset.title = event.detail.metadata.title;
             historySong.dataset.title = event.detail.station.name;
 
-            historySong.children[0].innerText = timeStampString;
-            historySong.children[1].innerText = event.detail.metadata.title;
+            historySong.querySelector('.historySongTitle').innerText = event.detail.metadata.title;
+            historySong.querySelector('.historySongTimestamp').innerText = event.detail.station.name;
+            historySong.querySelector('.historySongStation').innerText = timeStampString;
+            historySong.querySelector('.historySongYoutubeWrapper').querySelector('a').href =
+                'https://www.youtube.com/results?search_query='+event.detail.metadata.title;
 
-            historyPanel.appendChild(historySong);
+            historyPanel.prepend(historySong);
         })
     }
 

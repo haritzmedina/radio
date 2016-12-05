@@ -3,7 +3,7 @@
     <title>EDM Radio Station listener</title>
     <script type="text/javascript" src="js/lib/jquery-2.1.3.min.js"></script>
     <script type="text/javascript" src="js/lib/jquery.mobile-1.4.5.min.js"></script>
-    <link rel="stylesheet" href="css/vendor/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <link rel="stylesheet" href="css/default.css" type="text/css"/>
     <link rel="icon"
           type="image/png"
@@ -12,8 +12,12 @@
 <body>
 <template id="historySongTemplate">
     <div class="historySong" data-timestamp="" data-title="" data-station="">
-        <div class="historySongTimestamp"></div>
         <div class="historySongTitle"></div>
+        <div class="historySongTimestamp"></div>
+        <div class="historySongStation"></div>
+        <div class="historySongYoutubeWrapper">
+            <a target="_blank"><img src="./img/youtube.png"</a>
+        </div>
     </div>
 </template>
 
