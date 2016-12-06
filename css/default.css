@@ -87,10 +87,12 @@ header{
 /* History panel */
 .historySong{
     display: block;
-    width: 240px;
+    width: 230px;
     font-size: 1em;
     color: white;
-    margin: 5px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 10px;
     padding: 5px;
     background-color: rgba(150,110,110,0.8);
@@ -99,7 +101,9 @@ header{
 .historySongTitle{
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    line-height: 1.5em;
+    height: 3em;
+    font-size: 1.4em;
 }
 
 .historySongYoutubeWrapper img{
@@ -109,6 +113,7 @@ header{
 
 .historyInnerElem{
     float:left;
+    margin-right: 5px;
 }
 
 /** JQUERY MOBILE FIXES **/

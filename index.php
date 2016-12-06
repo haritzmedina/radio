@@ -13,8 +13,8 @@
 <template id="historySongTemplate">
     <div class="historySong" data-timestamp="" data-title="" data-station="">
         <div class="historySongTitle"></div>
+        <div class="historySongStation historyInnerElem"></div>
         <div class="historySongTimestamp"></div>
-        <div class="historySongStation"></div>
         <div class="historySongYoutubeWrapper">
             <a target="_blank"><img src="./img/youtube.png"</a>
         </div>
