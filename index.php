@@ -46,27 +46,23 @@
             echo'<div class="listenRadio"
             data-radio-info="'.$station->metadata.'"
             data-radio-uri="'.$station->media.'"
-            data-radio-type="'.$station->type.'"">'.$station->name.'</div>';
+            data-radio-type="'.$station->type.'">'.$station->name.'</div>';
         }
         ?>
     </div>
     <div id="player" data-role="footer" data-position="fixed">
         <div id="player-play-pause" class="controller" data-background="darkGray">
-            <img src="img/play.png" data-background="darkGray"/>
+            <img src="img/play.png" data-background="darkGray" alt="playImage"/>
         </div>
         <div id="youtubeLinkWrapper" class="controller" data-background="darkGray">
-            <a id="youtubeLink" target="_blank"><img src="img/youtube.png" data-background="darkGray"/></a>
+            <a id="youtubeLink" target="_blank"><img src="img/youtube.png" data-background="darkGray" alt="youtube icon"/></a>
         </div>
         <div id="clipboardLinkWrapper" class="controller" data-background="darkGray">
-            <a id="clipboardLink"><img src="img/clipboard.png"/></a>
+            <a id="clipboardLink"><img src="img/clipboard.png" alt="clipboard icon"/></a>
         </div>
         <div id="historyButtonWrapper" class="controller" data-background="darkGray">
-            <a href="#historyPanel"><img src="img/history.png"/></a>
+            <a href="#historyPanel"><img src="img/history.png" alt="history icon"/></a>
         </div>
-
-        <!--<div data-role="panel" id="mypanel">
-
-        </div><!-- /panel -->
         <div id="metadata"><div id="songtitle"></div></div>
     </div>
 
