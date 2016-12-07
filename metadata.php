@@ -59,7 +59,7 @@ if($requestedStation->type==='shoutcast'){
     $pos = strrpos($bodyContent, ',');
     $id = $pos === false ? $bodyContent : substr($bodyContent, $pos + 1);
 
-    $response->metadata->title = $id;
+    $response->metadata->title = trim($id);
 
     // close curl resource to free up system resources
     curl_close($ch);
