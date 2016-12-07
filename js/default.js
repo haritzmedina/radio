@@ -175,5 +175,25 @@
     setSongChangeEvents();
 
 
+    /**
+     * Cookies
+     */
+
+    window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#101010"
+                },
+                "button": {
+                    "background": "transparent",
+                    "text": "#999999",
+                    "border": "#999999"
+                }
+            },
+            "content": {
+                "href": "https://haritzmedina.com/#cookies"
+            }
+        })});
 
 })();
