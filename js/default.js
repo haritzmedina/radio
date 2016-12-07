@@ -80,6 +80,17 @@
 
     setControlsListeners();
 
+    function setClipboardButtonHandler(){
+        var clipboardButton =  document.querySelector('#clipboardLink');
+        new Clipboard(clipboardButton, {
+            text: function() {
+                return document.querySelector('#songtitle').innerText;
+            }
+        });
+    }
+
+    setClipboardButtonHandler();
+
     /**
      * Station metadata related functionality
      */
@@ -90,6 +101,7 @@
                 if (typeof result.metadata.title === 'string') {
                     var songTitleWrapper = document.getElementById('songtitle');
                     if (result.metadata.title !== songTitleWrapper.innerText) {
+                        console.log('Song changed from '+songTitleWrapper.innerText+' to '+result.metadata.title);
                         var songChangedEvent = new CustomEvent('songChanged', {detail: result});
                         songTitleWrapper.dispatchEvent(songChangedEvent);
                     }
@@ -127,15 +139,25 @@
         var d = new Date();
         var timeStampString = ('0' + d.getHours()).slice(-2) + ":" + ('0' + d.getMinutes()).slice(-2);
 
+        var songTitle = event.detail.metadata.title;
+
         historySong.dataset.timestamp = d.getTime();
-        historySong.dataset.title = event.detail.metadata.title;
+        historySong.dataset.title = songTitle;
         historySong.dataset.title = event.detail.station.name;
 
         historySong.querySelector('.historySongTitle').innerText = event.detail.metadata.title;
         historySong.querySelector('.historySongStation').innerText = event.detail.station.name;
         historySong.querySelector('.historySongTimestamp').innerText = timeStampString;
         historySong.querySelector('.historySongYoutubeWrapper').querySelector('a').href =
-            'https://www.youtube.com/results?search_query=' + encodeURIComponent(event.detail.metadata.title);
+            'https://www.youtube.com/results?search_query=' + encodeURIComponent(songTitle);
+
+        // Add event listener for copy clipboard
+        var copyClipboardButton = historySong.querySelector('.historySongCopyClipboard');
+        new Clipboard(copyClipboardButton, {
+            text: function() {
+                return songTitle;
+            }
+        });
 
         historyPanel.prepend(historySong);
     }
@@ -151,6 +173,7 @@
     }
 
     setSongChangeEvents();
+
 
 
 })();

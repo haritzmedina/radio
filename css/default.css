@@ -11,14 +11,6 @@ header{
     padding-bottom: 0.5em;
 }
 
-/*#radios{
-    align-content: space-around;
-    min-width: 20em;
-    min-height: 3em;
-    max-height: 75%;
-    overflow: auto;
-}*/
-
 .listenRadio{
     color: #8a6da3;
     font-weight: bold;
@@ -60,28 +52,33 @@ header{
 #player .controller{
     float: left;
     margin-left: 15px;
+    margin-bottom: 5px;
+    padding: 5px;
     cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
 }
 
-#player img{
+#player .controller[data-background="darkGray"]{
+    background-color: #666;
+}
+#player .controller[data-background="darkGray"]:hover{
+    background-color: #999;
+}
+
+#player .controller img{
     width: 50px;
     height: 50px;
 }
 
-#player img[data-background="darkGray"]{
-    background-color: #666;
-    border-radius: 15px;
-}
-
-#player img[data-background="darkGray"]:hover{
-    background-color: #999;
-    border-radius: 15px;
-}
-
 #metadata{
-    margin-top: 15px;
+    margin-top: 20px;
+    margin-left: 15px;
+    font-size: 20px;
     color: white;
-    max-width: 500px;
+    max-width: 600px;
+    float: left;
 }
 
 /* History panel */
@@ -102,11 +99,11 @@ header{
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 1.5em;
-    height: 3em;
+    max-height: 3em;
     font-size: 1.4em;
 }
 
-.historySongYoutubeWrapper img{
+.historySongControl{
     width: 25px;
     cursor: pointer;
 }
