@@ -97,7 +97,7 @@
                     document.getElementById('songtitle').innerText = result.metadata.title;
                     // Update youtube link
                     document.getElementById('youtubeLink').href =
-                        'https://www.youtube.com/results?search_query=' + encodeURI(result.metadata.title);
+                        'https://www.youtube.com/results?search_query=' + encodeURIComponent(result.metadata.title);
                 }
                 else {
                     document.getElementById('songtitle').innerText = "";
@@ -135,7 +135,7 @@
         historySong.querySelector('.historySongStation').innerText = event.detail.station.name;
         historySong.querySelector('.historySongTimestamp').innerText = timeStampString;
         historySong.querySelector('.historySongYoutubeWrapper').querySelector('a').href =
-            'https://www.youtube.com/results?search_query=' + encodeURI(event.detail.metadata.title);
+            'https://www.youtube.com/results?search_query=' + encodeURIComponent(event.detail.metadata.title);
 
         historyPanel.prepend(historySong);
     }
