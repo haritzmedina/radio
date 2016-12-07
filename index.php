@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>EDM Radio Station listener</title>
+    <title>EDM Radio Station Listener</title>
     <script type="text/javascript" src="js/lib/jquery-2.1.3.min.js"></script>
     <script type="text/javascript" src="js/lib/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">

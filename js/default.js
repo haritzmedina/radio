@@ -102,7 +102,7 @@
                 else {
                     document.getElementById('songtitle').innerText = "";
                     document.getElementById('youtubeLink').removeAttribute('href');
-                    document.title = 'Listening to '+result.station.name+' - EDM Radio Station listener';
+                    document.title = 'Listening to '+result.station.name+' - EDM Radio Station Listener';
                 }
             });
         }
@@ -111,7 +111,7 @@
     setInterval(updateSongMetadata, 3000);
 
     function songChangedTitleHandler(event) {
-        document.title = event.detail.metadata.title + ' at '+event.detail.station.name+' - EDM Radio Station listener';
+        document.title = event.detail.metadata.title + ' on '+event.detail.station.name;
     }
 
     /**
