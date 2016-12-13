@@ -22,7 +22,7 @@
                 playPlayer();
                 // Set to select current radio
                 selectRadio(event.toElement);
-                ga('send', 'event', 'listenRadio', '', newStation);
+                ga('send', 'event', 'listenRadio', 'radioStation', newStation);
             }
         });
     }
@@ -110,7 +110,6 @@
                     // Update youtube link
                     document.getElementById('youtubeLink').href =
                         'https://www.youtube.com/results?search_query=' + encodeURIComponent(result.metadata.title);
-                    ga('send', 'event', 'updatedMetadata', '', stationName);
                 }
                 else {
                     document.getElementById('songtitle').innerText = "";
@@ -206,7 +205,7 @@
         ga('send', 'event', 'youtubeLink');
     });
 
-    document.querySelector('#historyPanel').addEventListener('click', function (event){
+    document.querySelector('#historyButtonWrapper').addEventListener('click', function (event){
         ga('send', 'event', 'historyPanel');
     });
 
