@@ -22,6 +22,7 @@
                 playPlayer();
                 // Set to select current radio
                 selectRadio(event.toElement);
+                ga('send', 'event', 'listenRadio', '', newStation);
             }
         });
     }
@@ -101,8 +102,6 @@
                 if (typeof result.metadata.title === 'string') {
                     var songTitleWrapper = document.getElementById('songtitle');
                     if (result.metadata.title !== songTitleWrapper.innerText) {
-                        // TODO Remove log when the history song change event works properly
-                        console.log('Song changed from '+songTitleWrapper.innerText+' to '+result.metadata.title);
                         var songChangedEvent = new CustomEvent('songChanged', {detail: result});
                         songTitleWrapper.dispatchEvent(songChangedEvent);
                     }
@@ -111,6 +110,7 @@
                     // Update youtube link
                     document.getElementById('youtubeLink').href =
                         'https://www.youtube.com/results?search_query=' + encodeURIComponent(result.metadata.title);
+                    ga('send', 'event', 'updatedMetadata', '', stationName);
                 }
                 else {
                     document.getElementById('songtitle').innerText = "";
@@ -195,6 +195,19 @@
             "content": {
                 "href": "https://haritzmedina.com/#cookies"
             }
-        })});
+        })
+    });
+
+    /**
+     * Analytics custom events
+     */
+
+    document.querySelector('#youtubeLink').addEventListener('click', function (event){
+        ga('send', 'event', 'youtubeLink');
+    });
+
+    document.querySelector('#historyPanel').addEventListener('click', function (event){
+        ga('send', 'event', 'historyPanel');
+    });
 
 })();

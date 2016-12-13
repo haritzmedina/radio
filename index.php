@@ -19,10 +19,10 @@
         <div class="historySongStation historyInnerElem"></div>
         <div class="historySongTimestamp"></div>
         <div class="historySongYoutubeWrapper historyInnerElem">
-            <a target="_blank"><img class="historySongControl" src="./img/youtube.png"/></a>
+            <a target="_blank"><img class="historySongControl" src="./img/youtube.png" alt="youtube icon"/></a>
         </div>
         <div class="historySongCopyClipboard">
-            <a target="_blank"><img class="historySongControl" src="./img/clipboard.png"/></a>
+            <a target="_blank"><img class="historySongControl" src="./img/clipboard.png" alt="clipboard icon"/></a>
         </div>
     </div>
 </template>
