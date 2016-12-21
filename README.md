@@ -13,7 +13,6 @@ https://radio.haritzmedina.com
 * [RadioParty.pl](http://radioparty.pl/) /Shoutcast/
 * [FlaixFM](http://www.flaixfm.cat/)
 * [PulseEDM](http://www.streamlicensing.com/stations/sadanceradio/pulseEDM.html) /Shoutcast/
-* [DanceAttackFM](http://www.danceattack.fm/) /Shoutcast/
 * [RadioSeven.se](http://www.radioseven.se/) /Shoutcast/
 
 #Contact

@@ -81,6 +81,11 @@ header{
     float: left;
 }
 
+#historyButtonWrapper{
+    right: 20px;
+    position: absolute;
+}
+
 /* History panel */
 .historySong{
     display: block;

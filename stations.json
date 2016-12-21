@@ -30,14 +30,14 @@
     "type": "shoutcast"
   },
   {
-    "media": "http://149.255.59.164:8012/;stream.mp3",
-    "metadata": "http://149.255.59.164:8012/7.html",
+    "media": "http://uk4.internet-radio.com/proxy/danceattackfm?mp=/;",
+    "metadata": "http://uk4.internet-radio.com/proxy/danceattackfm?mp=/7.html",
     "name": "DanceAttackFM",
     "type": "shoutcast"
   },
   {
-    "media": "http://188.65.154.167:8500/;",
-    "metadata": "http://188.65.154.167:8500/7.html",
+    "media": "http://sc5.radioseven.se/;",
+    "metadata": "http://sc5.radioseven.se/7.html",
     "name": "RadioSeven",
     "type": "shoutcast"
   }

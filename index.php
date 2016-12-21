@@ -60,10 +60,10 @@
         <div id="clipboardLinkWrapper" class="controller" data-background="darkGray">
             <a id="clipboardLink"><img src="img/clipboard.png" alt="clipboard icon"/></a>
         </div>
+        <div id="metadata"><div id="songtitle"></div></div>
         <div id="historyButtonWrapper" class="controller" data-background="darkGray">
             <a href="#historyPanel"><img src="img/history.png" alt="history icon"/></a>
         </div>
-        <div id="metadata"><div id="songtitle"></div></div>
     </div>
 
     <script>
