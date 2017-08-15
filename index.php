@@ -74,7 +74,6 @@
 
         ga('create', 'UA-78853312-2', 'auto');
         ga('send', 'pageview');
-
     </script>
 
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->

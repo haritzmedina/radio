@@ -1,14 +1,8 @@
 [
   {
-    "media": "http://fire1.neradio.com:80/;",
-    "metadata": "http://fire1.neradio.com:80/7.html",
-    "name": "NERadio.fm",
-    "type": "shoutcast"
-  },
-  {
-    "media": "http://109.124.144.144:9000/;",
-    "metadata": "http://109.124.144.144:9000/7.html",
-    "name": "NERadio.se",
+    "media": "http://51.15.36.101/pulsHD.mp3?icy=http",
+    "metadata": "http://51.15.36.101/7.html",
+    "name": "PulsRadio",
     "type": "shoutcast"
   },
   {
@@ -18,16 +12,16 @@
     "type": "shoutcast"
   },
   {
-    "media": "http://195.55.74.208/flaix/shoutcastmp3.mp3",
-    "metadata": "",
+    "media": "http://flaixfmmob.streaming-pro.com:8002/;",
+    "metadata": "http://flaixfmmob.streaming-pro.com:8002/7.html",
     "name": "FlaixFM",
-    "type": "custom"
+    "type": "shoutcast"
   },
   {
-    "media": "http://us3.internet-radio.com:8087/;stream",
-    "metadata": "http://us3.internet-radio.com:8087/7.html",
+    "media": "http://pulseedm.cdnstream1.com:8124/1373_128",
+    "metadata": "http://pulseedm.cdnstream1.com:8124/status.xsl",
     "name": "PulseEDM",
-    "type": "shoutcast"
+    "type": "icecast2"
   },
   {
     "media": "http://uk4.internet-radio.com/proxy/danceattackfm?mp=/;",
@@ -36,9 +30,9 @@
     "type": "shoutcast"
   },
   {
-    "media": "http://sc5.radioseven.se/;",
-    "metadata": "http://sc5.radioseven.se/7.html",
-    "name": "RadioSeven",
+    "media": "http://ibizaglobalradio.streaming-pro.com:8024/;",
+    "metadata": "http://ibizaglobalradio.streaming-pro.com:8024/7.html",
+    "name": "IbizaGlobal",
     "type": "shoutcast"
   }
 ]

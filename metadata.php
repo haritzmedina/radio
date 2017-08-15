@@ -1,24 +1,15 @@
 <?php
 
-$stations = json_decode(file_get_contents('./stations.json'));
-
-$requestedStationName = htmlspecialchars($_GET["name"]);
-//$requestedStationName = htmlspecialchars('NERadio.fm');
-
-$requestedStation = new stdClass();
-
-foreach($stations as $station){
-    if($station->name==$requestedStationName){
-        $requestedStation = $station;
-    }
+function get_string_between($string, $start, $end){
+    $string = ' ' . $string;
+    $ini = strpos($string, $start);
+    if ($ini == 0) return '';
+    $ini += strlen($start);
+    $len = strpos($string, $end, $ini) - $ini;
+    return substr($string, $ini, $len);
 }
 
-$response = new stdClass();
-$response->station = $requestedStation;
-
-$response->metadata = new stdClass();
-
-if($requestedStation->type==='shoutcast'){
+function get_web_content($requestedStation){
     // create curl resource
     $ch = curl_init();
 
@@ -46,23 +37,45 @@ if($requestedStation->type==='shoutcast'){
     // $output contains the output string
     $resultPageString = curl_exec($ch);
 
-    function get_string_between($string, $start, $end){
-        $string = ' ' . $string;
-        $ini = strpos($string, $start);
-        if ($ini == 0) return '';
-        $ini += strlen($start);
-        $len = strpos($string, $end, $ini) - $ini;
-        return substr($string, $ini, $len);
+    // close curl resource to free up system resources
+    curl_close($ch);
+
+    return get_string_between($resultPageString, '<body>', '</body>');
+}
+
+$stations = json_decode(file_get_contents('./stations.json'));
+
+$requestedStationName = htmlspecialchars($_GET["name"]);
+//$requestedStationName = htmlspecialchars('NERadio.fm');
+
+$requestedStation = new stdClass();
+
+foreach($stations as $station){
+    if($station->name==$requestedStationName){
+        $requestedStation = $station;
     }
-    $bodyContent = get_string_between($resultPageString, '<body>', '</body>');
+}
+
+$response = new stdClass();
+$response->station = $requestedStation;
+
+$response->metadata = new stdClass();
+
+
+if($requestedStation->type==='shoutcast'){
+    $bodyContent = get_web_content($requestedStation);
 
     $pos = strrpos($bodyContent, ',');
     $id = $pos === false ? $bodyContent : substr($bodyContent, $pos + 1);
 
     $response->metadata->title = trim($id);
+}
+elseif($requestedStation->type==='icecast2'){
+    $bodyContent = get_web_content($requestedStation);
 
-    // close curl resource to free up system resources
-    curl_close($ch);
+    $id = get_string_between($bodyContent, '<td>Current Song:</td><td class="streamdata">', '</td></tr>');
+
+    $response->metadata->title = trim($id);
 }
 
 // Response the user
