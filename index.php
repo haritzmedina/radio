@@ -8,9 +8,9 @@
     <script type="text/javascript" src="js/vendor/clipboard.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <link rel="stylesheet" href="css/default.css" type="text/css"/>
-    <link rel="icon"
-          type="image/png"
-          href="./favicon.png">
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="manifest" href="/manifest.json">
+
 </head>
 <body>
 <template id="historySongTemplate">
