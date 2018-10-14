@@ -1,7 +1,7 @@
 [
   {
-    "media": "http://51.15.36.101/pulsHD.mp3?icy=http",
-    "metadata": "http://51.15.36.101/7.html",
+    "media": "http://icecast2.pulsradio.com:80/pulsHD.mp3",
+    "metadata": "http://icecast2.pulsradio.com/7.html",
     "name": "PulsRadio",
     "type": "shoutcast"
   },
