@@ -8,20 +8,20 @@
         listenButton.addEventListener("click", function (event) {
             // Get clicked radio
             var currentStation = document.getElementById('audioPlayer').dataset.station || '';
-            var newStation = event.toElement.innerText;
+            var newStation = event.target.innerText;
             if (newStation !== currentStation) {
                 // Get selected radio media URI
-                var radioUri = event.toElement.dataset.radioUri;
+                var radioUri = event.target.dataset.radioUri;
                 // Get player
                 var player = document.getElementById('audioPlayer');
                 // Set new radio to the player
                 player.innerHTML = "<source id='sourcePL' src='" + radioUri + "' type='audio/mpeg'/>";
-                player.dataset.station = event.toElement.innerText;
+                player.dataset.station = event.target.innerText;
                 // Reload and play
                 player.load();
                 playPlayer();
                 // Set to select current radio
-                selectRadio(event.toElement);
+                selectRadio(event.target);
                 ga('send', 'event', 'listenRadio', 'radioStation', newStation);
             }
         });
