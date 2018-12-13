@@ -24,5 +24,5 @@ https://radio.haritzmedina.com
 ## Browser
 Chrome, Firefox, Opera
 
-#Contact
+# Contact
 If you want to add new radio stations or any other improvement, just [contact me](mailto:me@haritzmedina.com).
