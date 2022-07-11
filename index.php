@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/default.css" type="text/css"/>
     <link rel="icon" type="image/png" href="./favicon.png">
     <link rel="manifest" href="/manifest.json">
-
 </head>
 <body>
 <template id="historySongTemplate">
@@ -19,7 +18,13 @@
         <div class="historySongStation historyInnerElem"></div>
         <div class="historySongTimestamp"></div>
         <div class="historySongYoutubeWrapper historyInnerElem">
-            <a target="_blank"><img class="historySongControl" src="./img/youtube.png" alt="youtube icon"/></a>
+            <a target="_blank"><img class="historySongControl" src="./img/youtube.png" title="Search the song in Youtube" alt="youtube icon"/></a>
+        </div>
+        <div class="historySongSpotifyWrapper historyInnerElem">
+            <a target="_blank"><img class="historySongControl" src="./img/spotify.png" title="Search the song in Spotify" alt="spotify icon"/></a>
+        </div>
+        <div class="historySongDeezerWrapper historyInnerElem">
+            <a target="_blank"><img class="historySongControl" src="./img/deezer.png" title="Search the song in Deezer" alt="deezer icon"/></a>
         </div>
         <div class="historySongCopyClipboard">
             <a target="_blank"><img class="historySongControl" src="./img/clipboard.png" alt="clipboard icon"/></a>
@@ -55,14 +60,20 @@
             <img src="img/play.png" data-background="darkGray" alt="playImage"/>
         </div>
         <div id="youtubeLinkWrapper" class="controller" data-background="darkGray">
-            <a id="youtubeLink" target="_blank"><img src="img/youtube.png" data-background="darkGray" alt="youtube icon"/></a>
+            <a id="youtubeLink" target="_blank"><img src="img/youtube.png" title="Search current song in Youtube" data-background="darkGray" alt="youtube icon"/></a>
+        </div>
+        <div id="spotifyLinkWrapper" class="controller" data-background="darkGray">
+            <a id="spotifyLink" target="_blank"><img src="img/spotify.png" title="Search current song in Spotify" data-background="darkGray" alt="spotify icon"/></a>
+        </div>
+        <div id="deezerLinkWrapper" class="controller" data-background="darkGray">
+            <a id="deezerLink" target="_blank"><img src="img/deezer.png" title="Search current song in Deezer" data-background="darkGray" alt="deezer icon"/></a>
         </div>
         <div id="clipboardLinkWrapper" class="controller" data-background="darkGray">
-            <a id="clipboardLink"><img src="img/clipboard.png" alt="clipboard icon"/></a>
+            <a id="clipboardLink"><img src="img/clipboard.png" title="Copy song to clipboard" alt="clipboard icon"/></a>
         </div>
         <div id="metadata"><div id="songtitle"></div></div>
         <div id="historyButtonWrapper" class="controller" data-background="darkGray">
-            <a href="#historyPanel"><img src="img/history.png" alt="history icon"/></a>
+            <a href="#historyPanel"><img src="img/history.png" title="Open music history" alt="history icon"/></a>
         </div>
     </div>
 

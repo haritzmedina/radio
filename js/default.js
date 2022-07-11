@@ -59,6 +59,7 @@
             // Change control icon
             var playPauseIcon = document.getElementById('player-play-pause').children[0];
             playPauseIcon.src = 'img/play.png';
+            playPauseIcon.title = "Play"
         }
     }
 
@@ -69,6 +70,7 @@
             // Change control icon
             var playPauseIcon = document.getElementById('player-play-pause').children[0];
             playPauseIcon.src = 'img/pause.png';
+            playPauseIcon.title = "Pause"
         }
     }
 
@@ -110,17 +112,25 @@
                     // Update youtube link
                     document.getElementById('youtubeLink').href =
                         'https://www.youtube.com/results?search_query=' + encodeURIComponent(result.metadata.title);
+                    // Update Spotify link
+                    document.getElementById('spotifyLink').href =
+                        'https://open.spotify.com/search/' + encodeURIComponent(result.metadata.title);
+                    // Update Deezer link
+                    document.getElementById('deezerLink').href =
+                        'https://www.deezer.com/search/' + encodeURIComponent(result.metadata.title);
                 }
                 else {
                     document.getElementById('songtitle').innerText = "";
                     document.getElementById('youtubeLink').removeAttribute('href');
+                    document.getElementById('spotifyLink').removeAttribute('href');
+                    document.getElementById('deezerLink').removeAttribute('href');
                     document.title = 'Listening to '+result.station.name+' - EDM Radio Station Listener';
                 }
             });
         }
     }
 
-    setInterval(updateSongMetadata, 3000);
+    setInterval(updateSongMetadata, 5000);
 
     function songChangedTitleHandler(event) {
         document.title = event.detail.metadata.title + ' on '+event.detail.station.name;
@@ -150,6 +160,10 @@
         historySong.querySelector('.historySongTimestamp').innerText = timeStampString;
         historySong.querySelector('.historySongYoutubeWrapper').querySelector('a').href =
             'https://www.youtube.com/results?search_query=' + encodeURIComponent(songTitle);
+        historySong.querySelector('.historySongSpotifyWrapper').querySelector('a').href =
+            'https://open.spotify.com/search/' + encodeURIComponent(songTitle);
+        historySong.querySelector('.historySongDeezerWrapper').querySelector('a').href =
+            'https://www.deezer.com/search/' + encodeURIComponent(songTitle);
 
         // Add event listener for copy clipboard
         var copyClipboardButton = historySong.querySelector('.historySongCopyClipboard');
@@ -203,6 +217,14 @@
 
     document.querySelector('#youtubeLink').addEventListener('click', function (event){
         ga('send', 'event', 'youtubeLink');
+    });
+
+    document.querySelector('#spotifyLink').addEventListener('click', function (event){
+        ga('send', 'event', 'spotifyLink');
+    });
+
+    document.querySelector('#deezerLink').addEventListener('click', function (event){
+        ga('send', 'event', 'deezerLink');
     });
 
     document.querySelector('#historyButtonWrapper').addEventListener('click', function (event){

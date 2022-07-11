@@ -1,20 +1,20 @@
 [
   {
-    "media": "http://icecast2.pulsradio.com:80/pulsHD.mp3",
-    "metadata": "http://icecast2.pulsradio.com/7.html",
+    "media": "https://sc1.gergosnet.com:80/stream/1/",
+    "metadata": "https://sc1.gergosnet.com:80/7.html",
     "name": "PulsRadio",
     "type": "shoutcast"
   },
   {
-    "media": "http://176.31.240.87:8000/rp.mp3",
-    "metadata": "http://176.31.240.87:8000/7.html",
+    "media": "http://s1.radioparty.pl:8000/stream64aac",
+    "metadata": "http://s1.radioparty.pl:8000/7.html",
     "name": "Radioparty.pl",
     "type": "shoutcast"
   },
   {
-    "media": "http://flaixfmmob.streaming-pro.com:8002/;",
-    "metadata": "http://flaixfmmob.streaming-pro.com:8002/7.html",
-    "name": "FlaixFM",
+    "media": "http://dancewave.online/dance.mp3",
+    "metadata": "http://stream.dancewave.online:8080/7.html",
+    "name": "DanceWave!",
     "type": "shoutcast"
   },
   {
@@ -30,9 +30,15 @@
     "type": "shoutcast"
   },
   {
-    "media": "http://ibizaglobalradio.streaming-pro.com:8024/;",
-    "metadata": "http://ibizaglobalradio.streaming-pro.com:8024/7.html",
-    "name": "IbizaGlobal",
+    "media": "http://stream.antenne.de/antenne?icy=https",
+    "metadata": "http://uk4.internet-radio.com/proxy/danceattackfm?mp=/7.html",
+    "name": "Antenne Bayern",
+    "type": "other"
+  },
+  {
+    "media": "https://eu10.fastcast4u.com:2650/,?icy=https",
+    "metadata": "https://eu10.fastcast4u.com:2650/7.html",
+    "name": "B4B radio club",
     "type": "shoutcast"
   }
 ]
